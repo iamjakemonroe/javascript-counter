@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+
+    <style>
+      body {
+        color: #fff;
+      }
+      .buttons {
+        text-align: center;
+        height: 12rem;
+      }
+      #count {
+        top: 3rem;
+        position: relative;
+      }
+      .header {
+        color: #000;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      section {
+        background-image: url("dashboard.jpg");
+        background-size: 30rem;
+        background-position: relative;
+        position: relative;
+        height: 10rem;
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+      }
+      #plus {
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: rgb(19, 121, 19);
+        position: relative;
+        margin-right: 2rem;
+        height: 2rem;
+        width: 8rem;
+        text-align: center;
+      }
+      #minus {
+        color: white;
+        cursor: pointer;
+        background-color: rgb(207, 13, 13);
+        position: relative;
+        height: 2rem;
+        width: 8rem;
+        margin-left: 2rem;
+        border-radius: 5px;
+      }
+      #saveBtn {
+        background-color: rgb(81, 58, 184);
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        top: 20px;
+        left: 10px;
+        margin-right: 2rem;
+        margin-bottom: 6rem;
+        height: 2rem;
+        width: 8rem;
+        text-align: center;
+      }
+      #savedCount {
+        font-weight: bold;
+        font-size: 0.8rem;
+        position: relative;
+        top: 5px;
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="header">Counter</h1>
+    </header>
+
+    <section class="buttons">
+      <h1 id="count">0</h1>
+
+      <button onclick="increment()" id="plus">increment</button>
+      <button onclick="decrement()" id="minus">decrement</button>
+      <br />
+      <button id="saveBtn" onclick="saveBtn()">save</button>
+      <p style="color: #000">history</p>
+      <div id="savedCount"></div>
+    </section>
+
+    <!--  -->
+
+    <!--  -->
+
+    <!--  -->
+    <script>
+      var count = document.getElementById("count");
+      var savedCount = document.getElementById("savedCount");
+
+      counting = 0;
+
+      function increment() {
+        counting = counting + 1;
+        count.innerHTML = counting;
+      }
+      function decrement() {
+        if ((counting = counting++)) {
+          counting = counting - 1;
+          count.innerHTML = counting;
+        }
+      }
+
+      function saveBtn() {
+        savedCount.innerHTML += " " + count.innerHTML;
+      }
+    </script>
+  </body>
+</html>
